@@ -19,12 +19,13 @@ temp_get <- function(version, dest_folder = NA){
              "Cirflux_ScalingAndModeling_leafLevelData_GigaScience.csv")
 
   # dir.exists(cache_path())
-  dir.create(cache_path(), showWarnings = FALSE)
+  versioned_path <- paste0(cache_path(), version)
+  dir.create(versioned_path, showWarnings = FALSE)
 
   invisible(
     lapply(files,
            function(x) get_if_not_exists(
-             paste0(baseurl, x), paste0(cache_path(), x))
+             paste0(baseurl, x), file.path(versioned_path, x))
     ))
 
   temp_compile(version = version)

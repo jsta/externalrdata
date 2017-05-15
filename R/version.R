@@ -7,12 +7,13 @@
 #' version_ls()
 #' }
 version_ls <- function(){
-  strsplit(
-    tools::file_path_sans_ext(
-      get_version_list()),
-    "_")[[1]][2]
+  res <- tools::file_path_sans_ext(get_version_list())
+
+  gsub("^.*?_", "", res)
 }
 
 version_rm <- function(version){
-  get_version_list(include.dirs = TRUE, full.names = TRUE)
+  unlink(
+    get_version_list(
+      include.dirs = TRUE, full.names = TRUE)[which(version == version_ls())])
 }

@@ -13,7 +13,8 @@ temp_ingest <- function(version, folder = NA){
 
   # Set-up paths ####
 
-  flist <- list.files(folder, pattern = "\\.csv$",
+  flist <- list.files(paste0(cache_path(), version),
+                      pattern = "\\.csv$",
                       full.names = TRUE, include.dirs = TRUE)
 
   # Read data ####
