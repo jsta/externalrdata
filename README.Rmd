@@ -33,12 +33,12 @@ library(externalrdata)
 ```
 
 ### Download external data and store in file system
-```{r eval=FALSE}
+```{r }
 temp_get("1")
 ```
 
 ### Load data
 
-```{r eval=FALSE}
+```{r }
 lapply(temp_load("1"), head)
 ```
