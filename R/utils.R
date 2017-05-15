@@ -15,3 +15,7 @@ stop_if_not_exists <- function(src_path) {
     stop(paste0("Dataset not found at: ", src_path, "\n Try running the appropriate `get*` and/or `compile` commands."))
   }
 }
+
+get_version_list <- function(...){
+  list.files(cache_path(), pattern = ".rds$", ...)
+}

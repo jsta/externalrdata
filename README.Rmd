@@ -33,6 +33,9 @@ library(externalrdata)
 ```
 
 ### Download external data and store in file system
+
+This package assumes that
+
 ```{r }
 temp_get("1")
 ```
