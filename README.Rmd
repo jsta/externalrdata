@@ -34,11 +34,11 @@ library(externalrdata)
 
 ### Download external data and store in file system
 ```{r eval=FALSE}
-temp_get()
+temp_get("1")
 ```
 
 ### Load data
 
 ```{r eval=FALSE}
-head(temp_load())
+lapply(temp_load("1"), head)
 ```

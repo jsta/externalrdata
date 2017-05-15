@@ -4,11 +4,12 @@
 #' @description Retrieves external files and store in file cache.
 #' @import rappdirs
 #' @importFrom utils download.file
+#' @param version version id
 #' @param dest_folder file.path optional will default to the location returned by \code{\link[rappdirs]{user_data_dir}}.
 #' @examples \dontrun{
-#' temp_get()
+#' temp_get(version = "1")
 #' }
-temp_get <- function(dest_folder = NA){
+temp_get <- function(version, dest_folder = NA){
 
   # replace with actual path
   baseurl <- "ftp://climb.genomics.cn/pub/10.5524/100001_101000/100244/"
@@ -25,4 +26,6 @@ temp_get <- function(dest_folder = NA){
            function(x) get_if_not_exists(
              paste0(baseurl, x), paste0(cache_path(), x))
     ))
+
+  temp_compile(version = version)
 }

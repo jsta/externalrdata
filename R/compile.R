@@ -12,19 +12,17 @@
 #' }
 temp_compile <- function(version, format = "rds", folder = NA){
 
-  browser()
-
   if(is.na(folder)){
     folder <- cache_path()
   }
 
-  ingest <- temp_ingest(version = version, folder = folder)
+  res <- temp_ingest(version = version, folder = folder)
 
   # dir.exists(cache_path())
   dir.create(cache_path(), recursive = TRUE, showWarnings = FALSE)
 
-  res <- list("res" = ingest)
-  res <- purrr::flatten(res)
+  # res <- list("res" = ingest)
+  # res <- purrr::flatten(res)
 
   outpath <- file.path(cache_path(), paste0("data_", version, ".rds"))
 

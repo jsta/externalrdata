@@ -4,9 +4,11 @@
 \alias{temp_get}
 \title{temp_get}
 \usage{
-temp_get(dest_folder = NA)
+temp_get(version, dest_folder = NA)
 }
 \arguments{
+\item{version}{version id}
+
 \item{dest_folder}{file.path optional will default to the location returned by \code{\link[rappdirs]{user_data_dir}}.}
 }
 \description{
@@ -14,6 +16,6 @@ Retrieves external files and store in file cache.
 }
 \examples{
 \dontrun{
-temp_get()
+temp_get(version = "1")
 }
 }
