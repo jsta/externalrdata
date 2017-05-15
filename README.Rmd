@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 
 ## externalrdata
 
-[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) [![Travis-CI Build Status](https://travis-ci.org/jsta/externalrdata.svg?branch=master)](https://travis-ci.org/jsta/externalrdata) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/externalrdata)](https://cran.r-project.org/package=externalrdata) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/externalrdata)](https://cran.r-project.org/package=externalrdata)
+[![Project Status: WIP - Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip) [![Travis-CI Build Status](https://travis-ci.org/jsta/externalrdata.svg?branch=master)](https://travis-ci.org/jsta/externalrdata) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/externalrdata)](https://cran.r-project.org/package=externalrdata) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/externalrdata)](https://cran.r-project.org/package=externalrdata)
 
 This package is a template to fetch, cache, and serve data from external sources. 
 
@@ -33,13 +33,12 @@ library(externalrdata)
 ```
 
 ### Download external data and store in file system
-```{r }
+```{r eval=FALSE}
 temp_get()
 ```
 
 ### Load data
 
-```{r }
+```{r eval=FALSE}
 head(temp_load())
 ```
-
