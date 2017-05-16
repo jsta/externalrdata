@@ -21,6 +21,7 @@ temp_get <- function(version, skip = NA, dest_folder = NA, compile = TRUE){
              "Cirflux_ScalingAndModeling_leafLevelData_GigaScience.csv")
 
   # dir.exists(cache_path())
+  dir.create(cache_path(), showWarnings = FALSE)
   versioned_path <- paste0(cache_path(), version)
   dir.create(versioned_path, showWarnings = FALSE)
 
