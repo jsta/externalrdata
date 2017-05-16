@@ -18,7 +18,7 @@ Load files from local file system
 }
 \examples{
 \dontrun{
-dt  <- load("1")
-dt2 <- load("2")
+dt  <- temp_load("1")
+dt2 <- temp_load("2")
 }
 }

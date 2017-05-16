@@ -7,8 +7,8 @@
 #' @importFrom rappdirs user_data_dir
 #' @importFrom dplyr src_sqlite
 #' @examples \dontrun{
-#' dt  <- load("1")
-#' dt2 <- load("2")
+#' dt  <- temp_load("1")
+#' dt2 <- temp_load("2")
 #' }
 temp_load <- function(version_id, format = "rds", fpath = NA){
 
