@@ -4,10 +4,10 @@
 \alias{temp_ingest}
 \title{Ingest flat files}
 \usage{
-temp_ingest(version, folder = NA, skip = NA)
+temp_ingest(version_id, folder = NA, skip = NA)
 }
 \arguments{
-\item{version}{character temp database version string}
+\item{version_id}{character temp database version string}
 
 \item{folder}{file.path to data folder. optional.}
 

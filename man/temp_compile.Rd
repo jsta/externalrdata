@@ -4,10 +4,10 @@
 \alias{temp_compile}
 \title{Compile data to R data (rds) object}
 \usage{
-temp_compile(version, format = "rds", folder = NA, skip = NA)
+temp_compile(version_id, format = "rds", folder = NA, skip = NA)
 }
 \arguments{
-\item{version}{character temp database version string}
+\item{version_id}{character temp database version string}
 
 \item{format}{character choice of "rds" or "sqlite"}
 

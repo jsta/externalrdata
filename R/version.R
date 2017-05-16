@@ -12,8 +12,9 @@ temp_versions <- function(){
   gsub("^.*?_", "", res)
 }
 
-version_rm <- function(version){
+version_rm <- function(version_id){
   unlink(
     get_version_list(
-      include.dirs = TRUE, full.names = TRUE)[which(version == nes_versions())])
+      include.dirs = TRUE, full.names = TRUE)[
+        which(version_id == nes_versions())])
 }

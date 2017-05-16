@@ -4,10 +4,10 @@
 \alias{temp_load}
 \title{temp_load}
 \usage{
-temp_load(version, format = "rds", fpath = NA)
+temp_load(version_id, format = "rds", fpath = NA)
 }
 \arguments{
-\item{version}{character database version string}
+\item{version_id}{character database version string}
 
 \item{format}{character choice of rds or sqlite}
 

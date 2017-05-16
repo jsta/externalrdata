@@ -1,6 +1,6 @@
 #' temp_load
 #' @description Load files from local file system
-#' @param version character database version string
+#' @param version_id character database version string
 #' @param format character choice of rds or sqlite
 #' @param fpath file.path optionally specify custom location of rds file
 #' @export
@@ -10,7 +10,7 @@
 #' dt  <- load("1")
 #' dt2 <- load("2")
 #' }
-temp_load <- function(version, format = "rds", fpath = NA){
+temp_load <- function(version_id, format = "rds", fpath = NA){
 
   if(!is.na(fpath)){
 
@@ -27,7 +27,7 @@ temp_load <- function(version, format = "rds", fpath = NA){
       stop_if_not_exists(sqlite_path)
       dplyr::src_sqlite(sqlite_path)
     }else{
-      rds_path <- paste0(cache_path(), "data_", version, ".rds")
+      rds_path <- paste0(cache_path(), "data_", version_id, ".rds")
       stop_if_not_exists(rds_path)
       readRDS(rds_path)
     }

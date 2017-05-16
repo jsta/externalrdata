@@ -35,13 +35,13 @@ library(externalrdata)
 
 ``` r
 # for demonstration purposes we will set on-the-fly compilation to FALSE
-temp_get(version = "1", compile = FALSE)
+temp_get(version_id = "1", compile = FALSE)
 ```
 
 ### List files
 
 ``` r
-temp_ls(version = "1")
+temp_ls(version_id = "1")
 #> [1] "Cirflux_ScalingAndModeling_canopyLevelData_GigaScience.csv"
 #> [2] "Cirflux_ScalingAndModeling_leafLevelData_GigaScience.csv"
 ```
@@ -50,7 +50,7 @@ temp_ls(version = "1")
 
 ``` r
 # these files have metadata headers that need to be skipped
-temp_compile(version = "1", skip = c(16, 38))
+temp_compile(version_id = "1", skip = c(16, 38))
 #> data compiled to /home/jose/.local/share/externalrdata//data_1.rds
 ```
 
@@ -64,7 +64,7 @@ temp_versions()
 ### Load data
 
 ``` r
-dt <- temp_load(version = "1")
+dt <- temp_load(version_id = "1")
 names(dt)
 #> [1] "Cirflux_ScalingAndModeling_canopyLevelData_GigaScience"
 #> [2] "Cirflux_ScalingAndModeling_leafLevelData_GigaScience"

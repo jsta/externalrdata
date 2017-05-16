@@ -1,6 +1,6 @@
 #' temp_ls
 #'
-#' @param version character version id
+#' @param version_id character version id
 #' @param ... extra arguments passed to list.files
 #'
 #' @export
@@ -8,15 +8,15 @@
 #' @examples \dontrun{
 #' temp_ls("1")
 #' }
-temp_ls <- function(version, ...){
-  list.files(paste0(cache_path(), version),
+temp_ls <- function(version_id, ...){
+  list.files(paste0(cache_path(), version_id),
              pattern = "\\.csv$", ...)
 }
 
 #'@name temp_ingest
 #'@title Ingest flat files
 #'@description Ingest data from component flat files
-#'@param version character temp database version string
+#'@param version_id character temp database version string
 #'@param folder file.path to data folder. optional.
 #'@param skip numeric vector of lines to skip on file read. optional.
 #'@importFrom utils read.csv
@@ -25,10 +25,11 @@ temp_ls <- function(version, ...){
 #'temp_ingest("1")
 #'}
 #'
-temp_ingest <- function(version, folder = NA, skip = NA){
+temp_ingest <- function(version_id, folder = NA, skip = NA){
 
   # Set-up paths ####
-  flist <- temp_ls(version = version, full.names = TRUE, include.dirs = TRUE)
+  flist <- temp_ls(version_id = version_id,
+                   full.names = TRUE, include.dirs = TRUE)
 
   # Read data ####
 

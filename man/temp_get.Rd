@@ -4,10 +4,10 @@
 \alias{temp_get}
 \title{temp_get}
 \usage{
-temp_get(version, skip = NA, dest_folder = NA, compile = TRUE)
+temp_get(version_id, skip = NA, dest_folder = NA, compile = TRUE)
 }
 \arguments{
-\item{version}{version id}
+\item{version_id}{version id}
 
 \item{skip}{numeric vector of lines to skip on file read. optional.}
 
