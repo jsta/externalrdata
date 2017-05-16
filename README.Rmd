@@ -44,13 +44,34 @@ library(externalrdata)
 
 ```{r message=FALSE}
 # these files have metadata headers that need to be skipped
-temp_get("1", skip = c(16, 38))
+# for demonstration purposes we will set on-the-fly compilation to FALSE
+temp_get(version = "1", skip = c(16, 38), compile = FALSE)
+```
+
+### List files
+
+```{r }
+temp_ls(version = "1")
+```
+
+### Compile version
+
+```{r }
+temp_compile(version = "1")
+```
+
+### List versions
+
+```{r }
+temp_versions()
 ```
 
 ### Load data
 
 ```{r }
-lapply(temp_load("1"), head)
+dt <- temp_load(version = "1")
+names(dt)
+lapply(dt, head)
 ```
 
 ## Examples

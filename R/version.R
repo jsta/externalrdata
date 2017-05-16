@@ -1,4 +1,4 @@
-#' version_ls
+#' temp_versions
 #'
 #' @export
 #' @importFrom tools file_path_sans_ext
@@ -6,7 +6,7 @@
 #' @examples \dontrun{
 #' version_ls()
 #' }
-version_ls <- function(){
+temp_versions <- function(){
   res <- tools::file_path_sans_ext(get_version_list())
 
   gsub("^.*?_", "", res)
