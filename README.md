@@ -119,7 +119,13 @@ lapply(dt, head)
 Examples
 --------
 
+### Uses this template
+
 <https://github.com/jsta/nesRdata>
+
+### Uses as similar strategy
+
+<https://github.com/jsta/nhdR>
 
 Contributing
 ------------
