@@ -12,7 +12,8 @@ get_if_not_exists <- function(url, destfile){
 
 stop_if_not_exists <- function(src_path) {
   if(!file.exists(src_path)){
-    stop(paste0("Dataset not found at: ", src_path, "\n Try running the appropriate `get*` and/or `compile` commands."))
+    stop(paste0("Dataset not found at: ", src_path,
+      "\n Try running the appropriate `get*` and/or `compile` commands."))
   }
 }
 

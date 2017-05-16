@@ -5,11 +5,12 @@
 #' @import rappdirs
 #' @importFrom utils download.file
 #' @param version version id
+#' @param skip numeric vector of lines to skip on file read. optional.
 #' @param dest_folder file.path optional will default to the location returned by \code{\link[rappdirs]{user_data_dir}}.
 #' @examples \dontrun{
 #' temp_get(version = "1")
 #' }
-temp_get <- function(version, dest_folder = NA){
+temp_get <- function(version, skip = NA, dest_folder = NA){
 
   # replace with actual path
   baseurl <- "ftp://climb.genomics.cn/pub/10.5524/100001_101000/100244/"
@@ -28,5 +29,5 @@ temp_get <- function(version, dest_folder = NA){
              paste0(baseurl, x), file.path(versioned_path, x))
     ))
 
-  temp_compile(version = version)
+  temp_compile(version = version, skip = skip)
 }

@@ -5,24 +5,22 @@
 #'@param version character temp database version string
 #'@param format character choice of "rds" or "sqlite"
 #'@param folder file.path to data folder.
+#'@param skip numeric vector of lines to skip on file read. optional.
 #'@importFrom utils read.table
 #'@importFrom rappdirs user_data_dir
 #'@examples \dontrun{
 #' temp_compile("1", format = "rds")
 #' }
-temp_compile <- function(version, format = "rds", folder = NA){
+temp_compile <- function(version, format = "rds", folder = NA, skip = NA){
 
   if(is.na(folder)){
     folder <- cache_path()
   }
 
-  res <- temp_ingest(version = version, folder = folder)
+  res <- temp_ingest(version = version, folder = folder, skip = skip)
 
   # dir.exists(cache_path())
   dir.create(cache_path(), recursive = TRUE, showWarnings = FALSE)
-
-  # res <- list("res" = ingest)
-  # res <- purrr::flatten(res)
 
   outpath <- file.path(cache_path(), paste0("data_", version, ".rds"))
 
