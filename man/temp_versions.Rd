@@ -11,6 +11,6 @@ temp_versions
 }
 \examples{
 \dontrun{
-version_ls()
+temp_versions()
 }
 }

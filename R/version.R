@@ -4,7 +4,7 @@
 #' @importFrom tools file_path_sans_ext
 #'
 #' @examples \dontrun{
-#' version_ls()
+#' temp_versions()
 #' }
 temp_versions <- function(){
   res <- tools::file_path_sans_ext(get_version_list())
