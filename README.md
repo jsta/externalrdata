@@ -34,14 +34,41 @@ library(externalrdata)
 ### Download external data and store in file system
 
 ``` r
+# for demonstration purposes we will set on-the-fly compilation to FALSE
+temp_get(version = "1", compile = FALSE)
+```
+
+### List files
+
+``` r
+temp_ls(version = "1")
+#> [1] "Cirflux_ScalingAndModeling_canopyLevelData_GigaScience.csv"
+#> [2] "Cirflux_ScalingAndModeling_leafLevelData_GigaScience.csv"
+```
+
+### Compile version
+
+``` r
 # these files have metadata headers that need to be skipped
-temp_get("1", skip = c(16, 38))
+temp_compile(version = "1", skip = c(16, 38))
+#> data compiled to /home/jose/.local/share/externalrdata//data_1.rds
+```
+
+### List versions
+
+``` r
+temp_versions()
+#> [1] "1"
 ```
 
 ### Load data
 
 ``` r
-lapply(temp_load("1"), head)
+dt <- temp_load(version = "1")
+names(dt)
+#> [1] "Cirflux_ScalingAndModeling_canopyLevelData_GigaScience"
+#> [2] "Cirflux_ScalingAndModeling_leafLevelData_GigaScience"
+lapply(dt, head)
 #> $Cirflux_ScalingAndModeling_canopyLevelData_GigaScience
 #>   doy    HM Mac       CF         E    doyHM       RH       Ca     Temp
 #> 1 243 12.25   1 19.78839        NA 243.5104 57.63879 399.9181 27.94726

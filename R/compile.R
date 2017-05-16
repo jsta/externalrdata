@@ -25,5 +25,5 @@ temp_compile <- function(version, format = "rds", folder = NA, skip = NA){
   outpath <- file.path(cache_path(), paste0("data_", version, ".rds"))
 
   saveRDS(res, outpath)
-  message(paste0("temp compiled to ", outpath))
+  message(paste0("data compiled to ", outpath))
 }

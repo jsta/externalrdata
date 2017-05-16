@@ -43,9 +43,8 @@ library(externalrdata)
 ### Download external data and store in file system
 
 ```{r message=FALSE}
-# these files have metadata headers that need to be skipped
 # for demonstration purposes we will set on-the-fly compilation to FALSE
-temp_get(version = "1", skip = c(16, 38), compile = FALSE)
+temp_get(version = "1", compile = FALSE)
 ```
 
 ### List files
@@ -57,7 +56,8 @@ temp_ls(version = "1")
 ### Compile version
 
 ```{r }
-temp_compile(version = "1")
+# these files have metadata headers that need to be skipped
+temp_compile(version = "1", skip = c(16, 38))
 ```
 
 ### List versions
