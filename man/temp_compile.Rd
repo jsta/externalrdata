@@ -4,7 +4,7 @@
 \alias{temp_compile}
 \title{Compile data to R data (rds) object}
 \usage{
-temp_compile(version, format = "rds", folder = NA)
+temp_compile(version, format = "rds", folder = NA, skip = NA)
 }
 \arguments{
 \item{version}{character temp database version string}
@@ -12,6 +12,8 @@ temp_compile(version, format = "rds", folder = NA)
 \item{format}{character choice of "rds" or "sqlite"}
 
 \item{folder}{file.path to data folder.}
+
+\item{skip}{numeric vector of lines to skip on file read. optional.}
 }
 \description{
 Compile data from component flat files

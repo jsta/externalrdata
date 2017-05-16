@@ -5,6 +5,8 @@ Author: Joseph Stachelek <stachel2@msu.edu>
 Maintainer: Joseph Stachelek <stachel2@msu.edu>
 Description: Extremely lightweight template for packages that serve and cache 
   data from external sources.
+URL: https://github.com/jsta/externalrdata
+BugReports: https://github.com/jsta/externalrdata/issues
 Depends: R (>= 3.4.0)
 Imports: dplyr,
   rappdirs,

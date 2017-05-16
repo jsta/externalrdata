@@ -2,7 +2,7 @@
 #'
 #' @export
 #' @description Retrieves external files and store in file cache.
-#' @import rappdirs
+#' @importFrom rappdirs user_data_dir
 #' @importFrom utils download.file
 #' @param version version id
 #' @param skip numeric vector of lines to skip on file read. optional.

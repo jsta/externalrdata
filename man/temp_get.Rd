@@ -4,10 +4,12 @@
 \alias{temp_get}
 \title{temp_get}
 \usage{
-temp_get(version, dest_folder = NA)
+temp_get(version, skip = NA, dest_folder = NA)
 }
 \arguments{
 \item{version}{version id}
+
+\item{skip}{numeric vector of lines to skip on file read. optional.}
 
 \item{dest_folder}{file.path optional will default to the location returned by \code{\link[rappdirs]{user_data_dir}}.}
 }

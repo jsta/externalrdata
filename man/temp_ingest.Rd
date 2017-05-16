@@ -4,12 +4,14 @@
 \alias{temp_ingest}
 \title{Ingest flat files}
 \usage{
-temp_ingest(version, folder = NA)
+temp_ingest(version, folder = NA, skip = NA)
 }
 \arguments{
 \item{version}{character temp database version string}
 
 \item{folder}{file.path to data folder. optional.}
+
+\item{skip}{numeric vector of lines to skip on file read. optional.}
 }
 \description{
 Ingest data from component flat files

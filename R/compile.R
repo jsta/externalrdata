@@ -3,7 +3,6 @@
 #'@export
 #'@description Compile data from component flat files
 #'@param version character temp database version string
-#'@param format character choice of "rds" or "sqlite"
 #'@param folder file.path to data folder.
 #'@param skip numeric vector of lines to skip on file read. optional.
 #'@importFrom utils read.table
