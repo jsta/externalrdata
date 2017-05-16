@@ -16,5 +16,5 @@ version_rm <- function(version_id){
   unlink(
     get_version_list(
       include.dirs = TRUE, full.names = TRUE)[
-        which(version_id == nes_versions())])
+        which(version_id == temp_versions())])
 }
