@@ -42,7 +42,7 @@ library(externalrdata)
 
 ### Download external data and store in file system
 
-```{r message=FALSE}
+```{r message=FALSE, eval=FALSE}
 # for demonstration purposes we will set on-the-fly compilation to FALSE
 temp_get(version_id = "1", compile = FALSE)
 ```
@@ -77,11 +77,13 @@ lapply(dt, head)
 ## Examples
 
 ### Uses this template
-https://github.com/jsta/nesRdata 
+
+* https://github.com/jsta/nesRdata
+* https://github.com/jsta/nsws 
 
 ### Uses as similar strategy
 
-https://github.com/jsta/nhdR 
+* https://github.com/jsta/nhdR 
 
 ## Contributing
 

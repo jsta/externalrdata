@@ -121,11 +121,12 @@ Examples
 
 ### Uses this template
 
-<https://github.com/jsta/nesRdata>
+-   <https://github.com/jsta/nesRdata>
+-   <https://github.com/jsta/nsws>
 
 ### Uses as similar strategy
 
-<https://github.com/jsta/nhdR>
+-   <https://github.com/jsta/nhdR>
 
 Contributing
 ------------
