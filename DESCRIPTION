@@ -14,7 +14,7 @@ Imports: dplyr,
 License: GPL
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 Suggests: testthat,
     knitr,
     rmarkdown
