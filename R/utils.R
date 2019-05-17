@@ -20,3 +20,14 @@ stop_if_not_exists <- function(src_path) {
 get_version_list <- function(...){
   list.files(cache_path(), pattern = ".rds$", ...)
 }
+
+#' @importFrom curl new_handle parse_headers curl_fetch_memory
+url_exists <- function(url){
+  handle <- curl::new_handle(nobody = TRUE)
+
+  tryCatch(
+    length(curl::parse_headers(
+      curl::curl_fetch_memory(url, handle)$headers)) > 0,
+    error = function(e) FALSE
+  )
+}

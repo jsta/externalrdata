@@ -14,11 +14,10 @@
 temp_get <- function(version_id, skip = NA, dest_folder = NA, compile = TRUE){
 
   # replace with actual path
-  baseurl <- "ftp://climb.genomics.cn/pub/10.5524/100001_101000/100244/"
+  baseurl <- "https://data.baltimorecity.gov/api/views/dz54-2aru/"
 
   # replace with actual file names
-  files <- c("Cirflux_ScalingAndModeling_canopyLevelData_GigaScience.csv",
-             "Cirflux_ScalingAndModeling_leafLevelData_GigaScience.csv")
+  files <- c("rows.csv")
 
   # dir.exists(cache_path())
   dir.create(cache_path(), showWarnings = FALSE)
