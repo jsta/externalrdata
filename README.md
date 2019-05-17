@@ -1,22 +1,29 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-externalrdata
--------------
 
-[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) [![Travis-CI Build Status](https://travis-ci.org/jsta/externalrdata.svg?branch=master)](https://travis-ci.org/jsta/externalrdata) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/externalrdata)](https://cran.r-project.org/package=externalrdata) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/externalrdata)](https://cran.r-project.org/package=externalrdata)
+## externalrdata
 
-This package is a template R package to fetch, cache, and serve data from external sources. All data sources are assumed to be `csv` files. The typical workflow would be to fork this package and rename the project-specific pieces including:
+[![Project Status: Active - The project has reached a stable, usable
+state and is being actively
+developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![Travis-CI Build
+Status](https://travis-ci.org/jsta/externalrdata.svg?branch=master)](https://travis-ci.org/jsta/externalrdata)
 
--   `temp_get`
-    -   *baseurl*
-    -   *files*
--   `cache_path`
-    -   *appname*
-    -   *appauthor*
--   function prefixes (e.g. change `temp_get` to `myspecificproject_get`)
+This package is a template R package to fetch, cache, and serve data
+from external sources. All data sources are assumed to be `csv` files.
+The typical workflow would be to fork this package and rename the
+project-specific pieces including:
 
-Installation
-------------
+  - `temp_get`
+      - *baseurl*
+      - *files*
+  - `cache_path`
+      - *appname*
+      - *appauthor*
+  - function prefixes (e.g. change `temp_get` to
+    `myspecificproject_get`)
+
+## Installation
 
 ``` r
 # install devtools if not found
@@ -24,8 +31,7 @@ Installation
 devtools::install_github("jsta/externalrdata")
 ```
 
-Usage
------
+## Usage
 
 ``` r
 library(externalrdata)
@@ -42,8 +48,7 @@ temp_get(version_id = "1", compile = FALSE)
 
 ``` r
 temp_ls(version_id = "1")
-#> [1] "Cirflux_ScalingAndModeling_canopyLevelData_GigaScience.csv"
-#> [2] "Cirflux_ScalingAndModeling_leafLevelData_GigaScience.csv"
+#> [1] "rows.csv"
 ```
 
 ### Compile version
@@ -66,69 +71,43 @@ temp_versions()
 ``` r
 dt <- temp_load(version_id = "1")
 names(dt)
-#> [1] "Cirflux_ScalingAndModeling_canopyLevelData_GigaScience"
-#> [2] "Cirflux_ScalingAndModeling_leafLevelData_GigaScience"
+#> [1] "rows"
 lapply(dt, head)
-#> $Cirflux_ScalingAndModeling_canopyLevelData_GigaScience
-#>   doy    HM Mac       CF         E    doyHM       RH       Ca     Temp
-#> 1 243 12.25   1 19.78839        NA 243.5104 57.63879 399.9181 27.94726
-#> 2 243 12.50   1 19.72713 0.6034133 243.5208 57.40352 399.6133 27.89828
-#> 3 243 12.50   3 26.87623 0.5732674 243.5208 57.95871 399.5078 27.87452
-#> 4 243 12.50   5 25.45082 0.9285982 243.5208 57.43124 399.1546 28.07193
-#> 5 243 12.75   1 19.56377 0.5966896 243.5312 57.05452 399.7737 27.98397
-#> 6 243 12.75   3 27.07823 0.5784423 243.5312 55.69227 399.1530 27.56341
-#>        VPD
-#> 1 1.602927
-#> 2 1.607231
-#> 3 1.584086
-#> 4 1.622530
-#> 5 1.628518
-#> 6 1.639416
-#> 
-#> $Cirflux_ScalingAndModeling_leafLevelData_GigaScience
-#>   Phase Round Mac doy hour_minute    doyHM     edoyHM     Photo      Cond
-#> 1   BCL     1   8 225    13.36333 224.5568 -0.4431944 17.467428 0.5245078
-#> 2   BCL     1  10 225    12.76148 224.5317 -0.4682716 16.995131 0.4855805
-#> 3   BCL     1  12 225    12.23556 224.5098 -0.4901852 18.187724 0.4249060
-#> 4   BCL     2   8 225    17.39722 224.7249 -0.2751157  9.344222 0.1351165
-#> 5   BCL     2  10 225    16.71083 224.6963 -0.3037153 10.434296 0.1255458
-#> 6   BCL     2  12 225    15.98333 224.6660 -0.3340278 10.942486 0.1708158
-#>         Ci   Trmmol     VpdL    Tleaf     TBlk     CO2R     CO2S     PARi
-#> 1 327.6547 6.554678 1.296498 27.45328 27.97338 400.0453 392.0341 498.2016
-#> 2 315.2004 6.081539 1.392726 27.78813 27.97477 400.1950 392.4465 496.6033
-#> 3 312.9400 5.473191 1.323274 27.63768 27.97567 401.0077 392.8763 499.9037
-#> 4 262.1855 2.402542 1.813357 27.93825 27.97679 399.2937 395.1784 301.9572
-#> 5 250.6209 2.326804 1.841009 28.49788 27.97636 399.2225 394.6837 301.8735
-#> 6 279.9796 2.881306 1.683198 27.98449 27.97748 399.5314 394.7020 299.9138
-#>    Photo.SE    Cond.SE     Ci.SE Trmmol.SE    VpdL.SE   Tleaf.SE
-#> 1 0.7031462 0.04619687  6.247383 0.3885585 0.05465049 0.24630806
-#> 2 0.9458701 0.13348989 20.329685 1.0603156 0.18948384 0.65541659
-#> 3 0.8577592 0.04075373  7.604148 0.3015672 0.04605242 0.07294734
-#> 4 0.8592941 0.03885917 19.457671 0.5457852 0.08881719 0.33510276
-#> 5 1.5070798 0.01700748  3.149908 0.2589011 0.05565919 0.15341785
-#> 6 1.0152064 0.02373249  3.777135 0.3355953 0.03568582 0.15803726
-#>       TBlk.SE   CO2R.SE   CO2S.SE   PARi.SE
-#> 1 0.001442048 0.2591711 0.4555071 1.5448862
-#> 2 0.001994697 0.1366632 0.4716765 0.7736556
-#> 3 0.000510694 0.2537938 0.4434148 0.1052906
-#> 4 0.000559052 0.2784596 0.1790262 0.1442307
-#> 5 0.000874372 0.1418536 0.7376289 0.1275327
-#> 6 0.001087110 0.3937202 0.8308930 1.2680722
+#> $rows
+#>   S.MARTIN.LUTHER.KING.JR.BLVD...W.PRATT.ST S.B  MLK.Jr..Blvd..
+#> 1                ORLEANS ST & N LINWOOD AVE E/B         Orleans
+#> 2          E NORTHERN PKWY & SPRINGLAKE WAY W/B Northern Pkwy\n
+#> 3             W COLD SPRING LN & ROLAND AVE E/B   Cold Spring\n
+#> 4                 E NORTHERN PKWY & YORK RD W/B Northern Pkwy\n
+#> 5                 N CHARLES ST & E LAKE AVE S/B         Charles
+#> 6               W FAYETTE ST & N LIBERTY ST W/B       Fayette\n
+#>              Pratt.St         MLK.Jr..Blvd.....Pratt.St
+#> 1         Linwood Ave           Orleans   & Linwood Ave
+#> 2      Springlake Way Northern Pkwy\n  & Springlake Way
+#> 3          Roland Ave       Cold Spring\n  & Roland Ave
+#> 4           York Road      Northern Pkwy\n  & York Road
+#> 5            Lake Ave                Charles & Lake Ave
+#> 6 Liberty Heights Ave  Fayette\n  & Liberty Heights Ave
+#>   X.39.286027...76.627846. X11 X168 X27953
+#> 1  (39.295866, -76.576427) 141  123  27935
+#> 2  (39.364311, -76.617699) 116  271  14009
+#> 3  (39.343906, -76.635426) 214  236  14004
+#> 4  (39.365146, -76.609922) 132  257  14009
+#> 5  (39.369054, -76.625827) 235  272  14009
+#> 6  (39.290504, -76.617661)  65    6  13642
 ```
 
-Examples
---------
+## Examples
 
 ### Uses this template
 
--   <https://github.com/jsta/nesRdata>
--   <https://github.com/jsta/nsws>
+  - <https://github.com/jsta/nesRdata>
+  - <https://github.com/jsta/nsws>
 
 ### Uses as similar strategy
 
--   <https://github.com/jsta/nhdR>
+  - <https://github.com/jsta/nhdR>
 
-Contributing
-------------
+## Contributing
 
 Contributions welcome in the form of issues and pull requests.
