@@ -1,8 +1,8 @@
 Package: externalrdata
 Title: R package template to fetch and cache external data
 Version: 0.0.0.9000
-Author: Joseph Stachelek <stachel2@msu.edu>
-Maintainer: Joseph Stachelek <stachel2@msu.edu>
+Author: Jemma Stachelek <stachel2@msu.edu>
+Maintainer: Jemma Stachelek <stachel2@msu.edu>
 Description: Extremely lightweight template for packages that serve and cache 
   data from external sources.
 URL: https://github.com/jsta/externalrdata
